@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    color: #222;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Header */
+  .hd {
+    background: linear-gradient(to right, #6f0d6fc1, #19fd0d, #fd7e14);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .ct {
+    max-width: 1100px;
+    width: 95%;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .lg {
+    font-size: 1.6rem;
+    text-shadow: 1px 1px 2px #000;
+  }
+  #mn-ck {
+    display: none;
+  }
+  .tg {
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none;
+  }
+  .nm {
+    display: flex;
+    gap: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    .nm {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #0d6efd;
+      display: none;
+      padding: 1rem;
+    }
+    #mn-ck:checked ~ .nm {
+      display: flex;
+    }
+    .tg {
+      display: block;
+    }
+  }
+  .nm :hover {
+    color: #d00;
+  }
+  
+  /* Main Grid */
+  .gr {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1100px;
+    width: 95%;
+    margin: auto;
+  }
+  .pf {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    gap: 1.5rem;
+  
+  }
+  .ph {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin: auto;
+
+  }
+  .ph:hover {
+    transform: scale(1.05);
+  }
+  
+/* Modal */
+.md {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 200;
+  }
+  .md:target {
+    display: flex;
+  }
+  .md-bx {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease;
+  }
+  .cls {
+    float: right;
+    font-size: 1.5rem;
+    color: #d00;
+    font-weight: bold;
+  }
+/* Tabs */
+.tab-group {
+    text-align: center;
+    margin-top: 5rem;
+  }
+  .tab-btn {
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    background: #0d6efd;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background 0.3s;
+  }
+  .tab-btn:hover {
+    background: #084298;
+  }
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+  .tab-content:target {
+    display: block;
+  }
+/* Projects & Skills */
+.pj-gr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .bx {
+    background: white;
+    padding: 1rem;
+    border-left: 5px solid #0d6efd;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .sk-ls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .sk-ls li {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+  }
+  
+
+/* Footer */
+.ft {
+    background: linear-gradient(to right, #0d6f42c1, #0d6efd, #fd7e14);
+    color: #eee;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 5rem;
+  }
+  .mq {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 8s linear infinite;
+  }
+  @keyframes scroll-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  .sc a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: firebrick;
+    transition: color 0.3s;
+  }
+  .sc a:hover {
+    color: #ffc107;
+  }
+/* Animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Fixes */
+  @media (max-width: 480px) {
+    .ph {
+      max-width: 200px;
+    }
+    .tab-group {
+      margin-top: 3rem;
+    }
+  }
+             
+   /* Page-specific header */
+   .hd {
+    background: linear-gradient(to right, #d63384, #6f42c1, #0dcaf0);
+  }
+
+  /* Contact Section */
+  .contact-section {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+
+  .contact-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #0d6efd;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-group button:hover {
+    background: #084298;
+  }
+
+ /* Confirmation Dialog */
+ .confirm-dialog {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .dialog-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+
+  .dialog-box p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+  .dialog-box button {
+    margin: 0 10px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-confirm {
+    background: #198754;
+    color: white;
+  }
+
+  .btn-cancel {
+    background: #dc3545;
+    color: white;
+  }
+textarea {
+    resize: none;
+}

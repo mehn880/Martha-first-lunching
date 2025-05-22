@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="Matha.css">
+    <title>Contact</title>
+</head>
+<body>
+
+     <!-- Header with Hamburger Menu -->
+  <header class="hd">
+    <div class="ct">
+      <div class="lg">Martha</div>
+      <input type="checkbox" id="mn-ck" />
+      <label for="mn-ck" class="tg">&#9776;</label>
+      <nav class="nm">
+        <a href="#">Resume</a>
+        <a href="Matha.html">Back-Home-Only</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+    
+          <div class="form-group">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+      </section>
+
+        <!-- Confirmation Dialog -->
+  <div class="confirm-dialog" id="confirmDialog">
+    <div class="dialog-box">
+      <p>Are you sure you want to submit this form?</p>
+      <button class="btn-confirm" id="confirmBtn">Yes, Submit</button>
+      <button class="btn-cancel" id="cancelBtn">Cancel</button>
+    </div>
+  </div>
+
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const dialog = document.getElementById('confirmDialog');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // stop default submission
+      dialog.style.display = 'flex'; // show dialog
+    });
+    confirmBtn.addEventListener('click', function() {
+      dialog.style.display = 'none';
+      alert("Form submitted successfully!"); // Replace with actual submission logic
+      form.reset();
+    });
+
+    cancelBtn.addEventListener('click', function() {
+      dialog.style.display = 'none';
+    });
+  </script>
+
+
+
+
+</body>
+</html>
